@@ -30,12 +30,11 @@ export const createPhoto = async (req, res) => {
 
 // Update Photo Route
 export const updatePhoto = async (req, res ) => {
-    const {id:_id} = req.parms;
+    const {id} = req.params;
 
     const photo = req.body;
-    if(mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send("No User with that id");
 
-    const updatedPhoto = await PostPhotos.findByIdAndUpdate(_id, photo);
+    const updatedPhoto = await PostPhotos.findByIdAndUpdate(id, photo);
 
     res.json(updatedPhoto);
 }
@@ -44,7 +43,6 @@ export const updatePhoto = async (req, res ) => {
 // export const deletePhoto = async (req, res) => {
 //     const { id } = req.params;
 
-//     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
 //     await PostMessage.findByIdAndRemove(id);
 
