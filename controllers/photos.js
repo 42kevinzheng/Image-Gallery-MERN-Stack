@@ -35,18 +35,18 @@ export const updatePhoto = async (req, res ) => {
     const photo = req.body;
     if(mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send("No User with that id");
 
-    const updatedPhoto = await PostPhotos.findByIdAndUpdate(_id, photo, {new: true});
+    const updatedPhoto = await PostPhotos.findByIdAndUpdate(_id, photo);
 
     res.json(updatedPhoto);
 }
 
-// Delete Photo Route
-export const deletePhoto = async (req, res) => {
-    const { id } = req.params;
+// // Delete Photo Route
+// export const deletePhoto = async (req, res) => {
+//     const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+//     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    await PostMessage.findByIdAndRemove(id);
+//     await PostMessage.findByIdAndRemove(id);
 
-    res.json({ message: "Post deleted successfully." });
-}
+//     res.json({ message: "Post deleted successfully." });
+// }

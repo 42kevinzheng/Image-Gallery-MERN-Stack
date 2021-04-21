@@ -1,5 +1,5 @@
 import express from 'express';
-import {getPhotos, createPhoto, updatePhoto, deletePhoto} from '../controllers/photos.js';
+import {getPhotos, createPhoto, updatePhoto} from '../controllers/photos.js';
 
 
 const router = express.Router();
@@ -13,8 +13,8 @@ router.post('/', createPhoto);
 // Update Photo Route
 router.patch('/:id', updatePhoto);
 
-// Delete Photo Route
-router.delete('/:id', deletePhoto);
+// // Delete Photo Route
+// router.delete('/:id', deletePhoto);
 
 
 export default router;
