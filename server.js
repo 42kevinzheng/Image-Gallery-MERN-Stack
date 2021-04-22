@@ -13,7 +13,6 @@ app.use(cors());
 
 app.use('/photos', photosRouter);
 
-
 const PORT = process.env.PORT|| 5000;
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })

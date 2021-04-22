@@ -1,6 +1,6 @@
 import PostPhotos from '../models/photo.js';
 
-// // All Users Route
+// // All Users 
 export const getPhotos = async(req, res) => {
     try{
         const postPhotos = await PostPhotos.find();
@@ -12,7 +12,7 @@ export const getPhotos = async(req, res) => {
 }
 
 
-// Create Photo Route
+// Create Photo 
 export const createPhoto = async (req, res) => {
     const { title, message, selectedFile, creator, tags } = req.body;
 
@@ -28,23 +28,22 @@ export const createPhoto = async (req, res) => {
 }
 
 
-// Update Photo Route
+// Update Photo 
 export const updatePhoto = async (req, res ) => {
     const {id} = req.params;
 
     const photo = req.body;
 
-    const updatedPhoto = await PostPhotos.findByIdAndUpdate(id, photo);
+    const updatedPhoto = await PostPhotos.findByIdAndUpdate(id, {...photo, id}, {new:true});
 
     res.json(updatedPhoto);
 }
 
-// // Delete Photo Route
-// export const deletePhoto = async (req, res) => {
-//     const { id } = req.params;
+// Delete Photo 
+export const deletePhoto = async (req, res) => {
+    const { id } = req.params;
 
+    await PostPhotos.findByIdAndRemove(id);
 
-//     await PostMessage.findByIdAndRemove(id);
-
-//     res.json({ message: "Post deleted successfully." });
-// }
+    res.json({ message: "Post deleted successfully." });
+}
