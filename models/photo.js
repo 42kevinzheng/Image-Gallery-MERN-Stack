@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 const photoSchema = mongoose.Schema({
     title: String,
-    user: String,
-    discription: String,
+    creator: String,
+    message: String,
     tags: [String],
     selectedFile: String,
     likeCount: {

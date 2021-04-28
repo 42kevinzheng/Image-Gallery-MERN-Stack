@@ -1,6 +1,6 @@
 import PostPhotos from '../models/photo.js';
 
-// // All Users 
+// All Photos 
 export const getPhotos = async(req, res) => {
     try{
         const postPhotos = await PostPhotos.find();
