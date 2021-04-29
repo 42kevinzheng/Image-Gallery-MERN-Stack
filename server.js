@@ -13,6 +13,10 @@ app.use(cors());
 
 app.use('/photos', photosRouter);
 
+app.get('/', (req,res)=> {
+  res.send('Welcome Page for image gallery');
+})
+
 const PORT = process.env.PORT|| 5000;
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
