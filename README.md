@@ -10,5 +10,4 @@ npm install and npm start the frontend and backend separately.
 The Frontend of this project is this link:
 https://github.com/42kevinzheng/Image-Gallery-MERN-Stack-Frontend/tree/main/client
 
-The live web version: https://image-galler-mern-stack-crud.netlify.app/
-
+The live web version: https://image-gallery-crud.netlify.app/
